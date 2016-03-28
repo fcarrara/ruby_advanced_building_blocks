@@ -2,15 +2,11 @@ def bubble_sort(arr)
 	i = 0
 	while i < arr.size - 1
 		if (arr[i] > arr[i + 1])
-			a = arr[i]
-			b = arr[i+1]
-			arr[i] = b
-			arr[i + 1] = a
+			arr[i], arr[i + 1] = arr[i + 1], arr[i]
 			i = 0
 		end
 		i += 1
 	end
-
 	arr
 end
 
@@ -18,15 +14,11 @@ def bubble_sort_by(arr, &check_length)
 	i = 0
 	while i < arr.size - 1
 		if check_length.call(arr[i], arr[i+1]) == 1
-			a = arr[i]
-			b = arr[i+1]
-			arr[i] = b
-			arr[i + 1] = a
+			arr[i], arr[i + 1] = arr[i + 1], arr[i]
 			i = 0
 		end
 		i += 1
 	end
-
 	arr
 end
 
